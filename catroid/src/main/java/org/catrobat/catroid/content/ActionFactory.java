@@ -158,6 +158,7 @@ import org.catrobat.catroid.content.actions.SetRotationStyleAction;
 import org.catrobat.catroid.content.actions.SetSizeToAction;
 import org.catrobat.catroid.content.actions.SetTempoAction;
 import org.catrobat.catroid.content.actions.SetTextAction;
+import org.catrobat.catroid.content.actions.SetThreadColorAction;
 import org.catrobat.catroid.content.actions.SetTransparencyAction;
 import org.catrobat.catroid.content.actions.SetVariableAction;
 import org.catrobat.catroid.content.actions.SetVisibleAction;
@@ -1026,6 +1027,13 @@ public class ActionFactory extends Actions {
 	public Action createSewUpAction(Sprite sprite) {
 		SewUpAction action = Actions.action(SewUpAction.class);
 		action.setSprite(sprite);
+		return action;
+	}
+
+	public Action createSetThreadColorAction(Sprite sprite, Formula color) {
+		SetThreadColorAction action = Actions.action(SetThreadColorAction.class);
+		action.setSprite(sprite);
+		action.setColor(color);
 		return action;
 	}
 
