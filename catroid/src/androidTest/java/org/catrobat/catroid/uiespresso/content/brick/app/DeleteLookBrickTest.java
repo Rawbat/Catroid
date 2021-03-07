@@ -85,8 +85,9 @@ public class DeleteLookBrickTest {
 
 	@Category({Cat.AppUi.class, Level.Smoke.class})
 	@Test
-	public void testPaintLookWithoutDelete() {
+	public void testPaintLookWithoutDelete() throws InterruptedException {
 		onView(withId(R.id.button_play)).perform(click());
+		Thread.sleep(100);
 		onView(withId(R.id.pocketpaint_drawing_surface_view)).perform(click());
 		pressBack();
 
@@ -95,10 +96,11 @@ public class DeleteLookBrickTest {
 
 	@Category({Cat.AppUi.class, Level.Smoke.class})
 	@Test
-	public void testPaintAndDeleteLook() {
+	public void testPaintAndDeleteLook() throws InterruptedException {
 		script.addBrick(new DeleteLookBrick());
 
 		onView(withId(R.id.button_play)).perform(click());
+		Thread.sleep(100);
 		onView(withId(R.id.pocketpaint_drawing_surface_view)).perform(click());
 		pressBack();
 
